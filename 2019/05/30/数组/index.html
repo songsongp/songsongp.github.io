@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>浏览器内核 | songsong的博客</title>
+  <title>数组 | songsong的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器最重要或者说最核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释并渲染网页。所以，通常所谓的浏览器内核也就是 浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。">
-<meta name="keywords" content="前端基础">
+  <meta name="description" content="JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 又新增了第七种 Symbol 类型的值，本教程不涉及。）">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器内核">
-<meta property="og:url" content="http://yoursite.com/2019/05/23/浏览器内核/index.html">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/数组/index.html">
 <meta property="og:site_name" content="songsong的博客">
-<meta property="og:description" content="浏览器最重要或者说最核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释并渲染网页。所以，通常所谓的浏览器内核也就是 浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。">
+<meta property="og:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 又新增了第七种 Symbol 类型的值，本教程不涉及。）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T06:44:19.385Z">
+<meta property="og:updated_time" content="2019-05-30T06:22:47.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器内核">
-<meta name="twitter:description" content="浏览器最重要或者说最核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释并渲染网页。所以，通常所谓的浏览器内核也就是 浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 又新增了第七种 Symbol 类型的值，本教程不涉及。）">
   
     <link rel="alternative" href="/atom.xml" title="songsong的博客" type="application/atom+xml">
   
@@ -160,37 +160,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-浏览器内核" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      浏览器内核
+      数组
     </h1>
   
 
         
-        <a href="/2019/05/23/浏览器内核/" class="archive-article-date">
-  	<time datetime="2019-05-23T06:17:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
+        <a href="/2019/05/30/数组/" class="archive-article-date">
+  	<time datetime="2019-05-30T05:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>浏览器最重要或者说最核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的<br>解释并渲染网页。所以，通常所谓的浏览器内核也就是 浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。<br><a id="more"></a><br>浏览器内核对于浏览器而言，是基础，是依托。如果没有了浏览器内核，那么浏览器是无法独立存在且产生作用的。它的存在，决定了网页的呈现的内<br>容、格式以及效果。所以说，一个好的浏览器，一定是基于有一个稳定、高端、作用明显的浏览器内核的。</p>
-<h2 id="浏览器的内核有哪些？分别有什么代表的浏览器？"><a href="#浏览器的内核有哪些？分别有什么代表的浏览器？" class="headerlink" title="浏览器的内核有哪些？分别有什么代表的浏览器？"></a>浏览器的内核有哪些？分别有什么代表的浏览器？</h2><ul>
-<li>Trident 内核：IE</li>
-<li>Gecko 内核：火狐浏览器Firefox</li>
-<li>Webkit 内核：Safari Chromewebkit、曾经的 Chrome</li>
-<li>Presto 内核：代表作品是 Opera ，Presto 是由 Opera Software 开发的浏览器排版引擎，它是世界公认最快的渲染速度的引擎。在 13 年之后，Opera 宣布加入谷歌阵营，弃用了 Presto。</li>
-<li>Blink 内核：由 Google 和 Opera Software 开发的浏览器排版引擎，2013 年 4 月发布。现在 Chrome 内核是 Blink。</li>
+        <p>JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 又新增了第七种 Symbol 类型的值，本教程不涉及。）<br><a id="more"></a></p>
+<ul>
+<li><p>数值（number）：整数和小数（比如1和3.14）   </p>
+</li>
+<li><p>字符串（string）：文本（比如Hello World）。    </p>
+</li>
+<li><p>布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）   </p>
+</li>
+<li><p>undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值   </p>
+</li>
+<li><p>null：表示空值，即此处的值为空。    </p>
+</li>
+<li><p>对象（object）：各种值组成的集合。</p>
+</li>
 </ul>
-<p>参考资料：</p>
-<p><a href="https://www.cnblogs.com/xiaoxingyiyi/p/5740383.html" target="_blank" rel="noopener">了解四大主流浏览器内核</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzU3MDQ3NTA4OA==&amp;mid=100000668&amp;idx=1&amp;sn=e5e6cc269a4296a2873718f9ac85d582&amp;chksm=7cef94a34b981db50896abef085893f02cd951fc4c602e3e7ab3b987ec9741665d281bc5fc62&amp;mpshare=1&amp;scene=23&amp;srcid=0522jeqXm7bTf3rPsey6OXZ6#rd" target="_blank" rel="noopener">前端一万小时</a></p>
+<p>通常，数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据类型，不能再细分了。对象则称为合成类型（complex type）的值，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。至于undefined和null，一般将它们看成两个特殊值。</p>
+<p><strong>对象</strong>是最复杂的数据类型，又可以分成三个子类型。</p>
+<ul>
+<li><p>狭义的对象（object）  </p>
+</li>
+<li><p><strong>数组</strong>（array）    </p>
+</li>
+<li><p>函数（function）</p>
+</li>
+</ul>
+<p>狭义的对象和数组是两种不同的数据组合方式，除非特别声明，本教程的“对象”都特指狭义的对象。函数其实是处理数据的方法，JavaScript 把它当成一种数据类型，可以赋值给变量，这为编程带来了很大的灵活性，也为 JavaScript 的“函数式编程”奠定了基础。</p>
+<h2 id="for…in-循环和数组的遍历"><a href="#for…in-循环和数组的遍历" class="headerlink" title="for…in 循环和数组的遍历"></a>for…in 循环和数组的遍历</h2><p>for…in循环不仅可以遍历对象，也可以遍历数组，毕竟数组只是一种特殊对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>但是，for…in不仅会遍历数组所有的数字键，还会遍历非数字键。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.foo = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// foo</span></span><br></pre></td></tr></table></figure>
+<p><strong>上面代码在遍历数组时，也遍历到了非整数键foo。所以，不推荐使用for…in遍历数组。</strong></p>
+<p>数组的遍历可以考虑使用for循环或while循环。</p>
+<p>上面代码是三种遍历数组的写法。最后一种写法是逆向遍历，即从最后一个元素向第一个元素遍历。</p>
+<p>数组的forEach方法，也可以用来遍历数组，详见《标准库》的 Array 对象一章。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">colors.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">color</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(color);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// red</span></span><br><span class="line"><span class="comment">// green</span></span><br><span class="line"><span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+<p>注意：空位就是数组没有这个元素，所以不会被遍历到，而undefined则表示数组有这个元素，值是undefined，所以遍历不会跳过。</p>
+<p>length属性不过滤空位。所以，使用length属性进行数组遍历，一定要非常小心。</p>
+<p><strong>其他的遍历方式待补充…</strong></p>
+<p>参考资料：<br><a href="https://wangdoc.com/javascript/types/general.html" target="_blank" rel="noopener">数据类型概述-JavaScript 教程</a></p>
+<p><a href="https://wangdoc.com/javascript/types/array.html" target="_blank" rel="noopener">数组-JavaScript 教程</a></p>
 
       
 
@@ -235,7 +264,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -291,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/23/浏览器内核/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/30/数组/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +334,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/23/JavaScript初识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/30/比较运算符/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript初识
+          比较运算符
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/05/30/闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">闭包</div>
       <i class="icon-circle-right"></i>
     </a>
   
