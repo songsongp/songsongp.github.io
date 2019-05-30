@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>比较运算符 | songsong的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目前正在学习前端技能">
+  <meta name="description" content="严格相等运算符JavaScript 提供两种相等运算符：==和===。 简单说，它们的区别是相等运算符（==）比较两个值是否相等，严格相等运算符（===）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（===）直接返回false，而相等运算符（==）会将它们转换成同一个类型，再用严格相等运算符进行比较。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比较运算符">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/比较运算符/index.html">
 <meta property="og:site_name" content="songsong的博客">
-<meta property="og:description" content="目前正在学习前端技能">
+<meta property="og:description" content="严格相等运算符JavaScript 提供两种相等运算符：==和===。 简单说，它们的区别是相等运算符（==）比较两个值是否相等，严格相等运算符（===）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（===）直接返回false，而相等运算符（==）会将它们转换成同一个类型，再用严格相等运算符进行比较。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-30T07:03:30.340Z">
+<meta property="og:updated_time" content="2019-05-30T07:44:19.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="比较运算符">
-<meta name="twitter:description" content="目前正在学习前端技能">
+<meta name="twitter:description" content="严格相等运算符JavaScript 提供两种相等运算符：==和===。 简单说，它们的区别是相等运算符（==）比较两个值是否相等，严格相等运算符（===）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（===）直接返回false，而相等运算符（==）会将它们转换成同一个类型，再用严格相等运算符进行比较。">
   
     <link rel="alternative" href="/atom.xml" title="songsong的博客" type="application/atom+xml">
   
@@ -180,7 +180,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="严格相等运算符"><a href="#严格相等运算符" class="headerlink" title="严格相等运算符"></a>严格相等运算符</h2><p>JavaScript 提供两种相等运算符：==和===。</p>
+<p>简单说，它们的区别是相等运算符（==）比较两个值是否相等，严格相等运算符（===）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（===）直接返回false，而相等运算符（==）会将它们转换成同一个类型，再用严格相等运算符进行比较。<br><a id="more"></a></p>
+<p>（1）不同类型的值</p>
+<p>如果两个值的类型不同，直接返回false。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> === <span class="string">"1"</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">true</span> === <span class="string">"true"</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>上面代码比较数值的1与字符串的“1”、布尔值的true与字符串”true”，因为类型不同，结果都是false。</p>
+<p>（2）同一类的原始类型值</p>
+<p><strong>同一类型的原始类型的值（数值、字符串、布尔值）</strong>比较时，值相同就返回true，值不同就返回false。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> === <span class="number">0x1</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>上面代码比较十进制的1与十六进制的1，因为类型和值都相同，返回true。</p>
+<p>需要注意的是，NaN与任何值都不相等（包括自身）。另外，正0等于负0。</p>
+<p>（3）复合类型值</p>
+<p>两个复合类型（对象、数组、函数）的数据比较时，不是比较它们的值是否相等，而是比较它们是否指向同一个地址。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125; === &#123;&#125; <span class="comment">// false</span></span><br><span class="line">[] === [] <span class="comment">// false</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; === <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>上面代码分别比较两个空对象、两个空数组、两个空函数，结果都是不相等。原因是对于复合类型的值，严格相等运算比较的是，它们是否引用同一个内存地址，而运算符两边的空对象、空数组、空函数的值，都存放在不同的内存地址，结果当然是false。</p>
+<p>如果两个变量引用同一个对象，则它们相等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> v1 = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> v2 = v1;</span><br><span class="line">v1 === v2 <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>注意，对于两个对象的比较，严格相等运算符比较的是地址，而大于或小于运算符比较的是值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj1 &gt; obj2 <span class="comment">// false</span></span><br><span class="line">obj1 &lt; obj2 <span class="comment">// false</span></span><br><span class="line">obj1 === obj2 <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>上面的三个比较，前两个比较的是值，最后一个比较的是地址，所以都返回false。</p>
+<p>（4）undefined 和 null</p>
+<p>undefined和null与自身严格相等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> === <span class="literal">undefined</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">null</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>由于变量声明后默认值是undefined，因此两个只声明未赋值的变量是相等的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> v1;</span><br><span class="line"><span class="keyword">var</span> v2;</span><br><span class="line">v1 === v2 <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="严格不相等运算符"><a href="#严格不相等运算符" class="headerlink" title="严格不相等运算符"></a>严格不相等运算符</h2><p>严格相等运算符有一个对应的“严格不相等运算符”（!==），它的算法就是先求严格相等运算符的结果，然后返回相反值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> !== <span class="string">'1'</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">!(<span class="number">1</span> === <span class="string">'1'</span>)</span><br></pre></td></tr></table></figure>
+<p>上面代码中，感叹号!是求出后面表达式的相反值。</p>
+<h2 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h2><p>相等运算符用来比较相同类型的数据时，与严格相等运算符完全一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="number">1.0</span></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="number">1</span> === <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+<p>比较不同类型的数据时，相等运算符会先将数据进行类型转换，然后再用严格相等运算符比较。下面分成四种情况，讨论不同类型的值互相比较的规则。</p>
+<p>（1）原始类型值</p>
+<p>原始类型的值会转换成数值再进行比较。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="literal">true</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 1 === Number(true)</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == <span class="literal">false</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 0 === Number(false)</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> == <span class="literal">true</span> <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 等同于 2 === Number(true)</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> == <span class="literal">false</span> <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 等同于 2 === Number(false)</span></span><br><span class="line"></span><br><span class="line"><span class="string">'true'</span> == <span class="literal">true</span> <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 等同于 Number('true') === Number(true)</span></span><br><span class="line"><span class="comment">// 等同于 NaN === 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">''</span> == <span class="number">0</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 Number('') === 0</span></span><br><span class="line"><span class="comment">// 等同于 0 === 0</span></span><br><span class="line"></span><br><span class="line"><span class="string">''</span> == <span class="literal">false</span>  <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 Number('') === Number(false)</span></span><br><span class="line"><span class="comment">// 等同于 0 === 0</span></span><br><span class="line"></span><br><span class="line"><span class="string">'1'</span> == <span class="literal">true</span>  <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 Number('1') === Number(true)</span></span><br><span class="line"><span class="comment">// 等同于 1 === 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">'\n  123  \t'</span> == <span class="number">123</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 因为字符串转为数字时，省略前置和后置的空格</span></span><br></pre></td></tr></table></figure>
+<p>上面代码将字符串和布尔值都转为数值，然后再进行比较。具体的字符串与布尔值的类型转换规则，参见《数据类型转换》一章。</p>
+<p>（2）对象与原始类型值比较</p>
+<p>对象（这里指广义的对象，包括数组和函数）与原始类型的值比较时，对象转换成原始类型的值，再进行比较。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象与数值比较时，对象转为数值</span></span><br><span class="line">[<span class="number">1</span>] == <span class="number">1</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 Number([1]) == 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象与字符串比较时，对象转为字符串</span></span><br><span class="line">[<span class="number">1</span>] == <span class="string">'1'</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 String([1]) == '1'</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>] == <span class="string">'1,2'</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 String([1, 2]) == '1,2'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象与布尔值比较时，两边都转为数值</span></span><br><span class="line">[<span class="number">1</span>] == <span class="literal">true</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 等同于 Number([1]) == Number(true)</span></span><br><span class="line">[<span class="number">2</span>] == <span class="literal">true</span> <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 等同于 Number([2]) == Number(true)</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，数组[1]与数值进行比较，会先转成数值，再进行比较；与字符串进行比较，会先转成字符串，再进行比较；与布尔值进行比较，对象和布尔值都会先转成数值，再进行比较。</p>
+<p>（3）undefined 和 null</p>
+<p>undefined和null与其他类型的值比较时，结果都为false，它们互相比较时结果为true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span> == <span class="literal">null</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == <span class="literal">null</span> <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>（4）相等运算符的缺点</p>
+<p>相等运算符隐藏的类型转换，会带来一些违反直觉的结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> == <span class="string">''</span>             <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> == <span class="string">'0'</span>            <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> == <span class="literal">true</span>           <span class="comment">// false</span></span><br><span class="line"><span class="number">2</span> == <span class="literal">false</span>          <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">false</span> == <span class="string">'false'</span>    <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="string">'0'</span>        <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="literal">false</span> == <span class="literal">undefined</span>  <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="literal">null</span>       <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>   <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="string">' \t\r\n '</span> == <span class="number">0</span>     <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>上面这些表达式都不同于直觉，很容易出错。因此建议不要使用相等运算符（==），最好只使用严格相等运算符（===）。</strong></p>
+<h2 id="不相等运算符"><a href="#不相等运算符" class="headerlink" title="不相等运算符"></a>不相等运算符</h2><p>相等运算符有一个对应的“不相等运算符”（!=），它的算法就是先求相等运算符的结果，然后返回相反值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> != <span class="string">'1'</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">!(<span class="number">1</span> == <span class="string">'1'</span>)</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://wangdoc.com/javascript/operators/comparison.html" target="_blank" rel="noopener">比较运算符-JavaScript 教程</a></p>
+
       
 
       
@@ -422,7 +472,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">NetWork协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -430,7 +480,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NetWork协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
